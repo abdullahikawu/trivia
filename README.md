@@ -235,5 +235,9 @@ Trivia backend server runs on localhost with the base URL: localhost:5000
 }
 
 ## Authors
+- Abdullahi Kawu
+- Sudhanshu Kulshrestha
+- Sarah Maris
 
 ## Acknowledgements
+I give thanks to ALX, Udacity for opportunity to be a part of the program and course instructor, Caryn McCarthy, for making the course easy to apprenend.
