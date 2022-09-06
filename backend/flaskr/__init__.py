@@ -71,17 +71,17 @@ def create_app(test_config=None):
         start = paginate_from(request)
         end = start + QUESTIONS_PER_PAGE
         
-        questions = Question.query.all()
+        questions = Question.query.offset(start).limit(end).all()
         
         # merge formated  category records (dicionary) together
         for category in Category.query.all():
             categories.update(category.format())
         
         # return if question exist for the required page (start offset) 
-        if categories and len(questions) >= start:
+        if categories and Question.query.count() >= start:
             return jsonify({
                 'success': True,
-                'questions': [question.format() for question in questions[start:end]],
+                'questions': [question.format() for question in questions],
                 'total_questions': len(questions),
                 'categories': categories,
                 'current_category': None,
